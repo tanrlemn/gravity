@@ -33,9 +33,9 @@ One canonical name per concept. The synonym list is load-bearing.
 **Never call it:** the prompt, the system prompt.
 
 ## Example
-**Is:** a filled gravity layer in `examples/` that has been lived in — a `TBD` closed by a dated ruling, a spec with its write-back filled.
+**Is:** this kit's own `gravity/` — a filled layer that is lived in, with rulings appended as they land. *(Ruled 2026-10-09 by the owner: "the gravity of the repo itself is enough of an example." No `examples/` folder.)*
 **Is not:** prose about the method, or a template with sample values.
 
 ---
 ## Relationships
-A project copies Templates once and owns the copies. The Skill describes how a Gravity layer is bootstrapped, how a Spec is grounded against it, and how a Write-back keeps it true. An Adapter points a tool at the Gravity layer and nothing else. An Example shows one Gravity layer after use.
+A project copies Templates once and owns the copies. The Skill describes how a Gravity layer is bootstrapped, how a Spec is grounded against it, and how a Write-back keeps it true. An Adapter points a tool at the Gravity layer and nothing else. The kit's own Gravity layer is the Example.

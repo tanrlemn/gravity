@@ -54,7 +54,7 @@ templates/        job, domain, invariants, boundaries, grammar, spec
 adapters/         one pointer file per tool, each under ten lines
 bin/gravity-init  optional POSIX sh: copy templates, write or append the pointer
 docs/method.md    the method explained, with a worked example
-gravity/          this kit's own gravity layer
+gravity/          this kit's own gravity layer — lived in, and the example
 CHANGELOG.md
 ```
 

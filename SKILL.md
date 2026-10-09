@@ -4,7 +4,7 @@ description: Maintains a project's standing "gravity layer" (job, domain vocabul
 license: MIT
 metadata:
   author: Tanner Lemon
-  version: 0.1.0
+  version: 0.1.1
 ---
 
 # Gravity
@@ -94,7 +94,7 @@ Then delete or archive the spec. It has served its purpose; leaving shipped spec
 
 ## Surfaces
 
-The gravity files are plain markdown in the repo, so they work anywhere. Whatever file your agent reads at session start — `AGENTS.md`, `CLAUDE.md`, `GEMINI.md`, a Copilot or Cursor rules file, a project's knowledge files — points at the five files. The `adapters/` folder in this repo has one such pointer per tool; copy the one you need to the place your tool reads it.
+The gravity files are plain markdown in the repo, so they work anywhere. Whatever file your agent reads at session start — `AGENTS.md`, `CLAUDE.md`, `GEMINI.md`, a Copilot or Cursor rules file, a project's knowledge files — points at the five files. The `adapters/` folder in the gravity repo (github.com/tanrlemn/gravity) has one such pointer per tool; copy the one you need to the place your tool reads it.
 
 ## Templates
 

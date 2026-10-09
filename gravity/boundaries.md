@@ -27,12 +27,8 @@ What exists and what each part owns.
 **Owns:** explanation and the worked example in prose.
 **May not:** contradict `SKILL.md`; where it would, `SKILL.md` changes first.
 
-### examples/
-**Owns:** demonstration — a filled gravity layer after use.
-**May not:** be referenced by the skill or the templates as required reading.
-
 ### gravity/
-**Owns:** this kit's own standing state.
+**Owns:** this kit's own standing state, and the demonstration of a filled layer after use — it is the example. *(An `examples/` module was planned and withdrawn 2026-10-09.)*
 **May not:** be mistaken for a template; it is filled, and it is ours.
 
 ## Crossing rules
