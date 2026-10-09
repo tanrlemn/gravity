@@ -1,0 +1,45 @@
+#!/bin/sh
+# gravity-init — copy the gravity templates into ./gravity/ and point your
+# agent's instructions file at them. POSIX sh, no dependencies. Optional:
+# the README shows the same four steps by hand.
+set -eu
+
+here=$(cd "$(dirname "$0")/.." && pwd)
+templates="$here/templates"
+
+if [ -e ./gravity ]; then
+  echo "gravity-init: ./gravity/ already exists; nothing done" >&2
+  exit 1
+fi
+if [ ! -d "$templates" ]; then
+  echo "gravity-init: templates not found at $templates" >&2
+  exit 1
+fi
+
+mkdir -p ./gravity ./specs
+for f in job domain invariants boundaries grammar; do
+  cp "$templates/$f.md" "./gravity/$f.md"
+done
+cp "$templates/spec.md" ./specs/TEMPLATE.md
+
+pointer="$here/adapters/AGENTS.md"
+target=""
+for cand in AGENTS.md CLAUDE.md GEMINI.md .github/copilot-instructions.md; do
+  if [ -f "$cand" ]; then target=$cand; break; fi
+done
+
+if [ -n "$target" ]; then
+  if grep -q 'gravity/job.md' "$target"; then
+    echo "gravity-init: $target already points at gravity/; left alone"
+  else
+    { printf '\n'; tail -n +3 "$pointer"; } >> "$target"
+    echo "gravity-init: appended the gravity pointer to $target"
+  fi
+else
+  cp "$pointer" ./AGENTS.md
+  target=AGENTS.md
+  echo "gravity-init: wrote AGENTS.md"
+fi
+
+echo "gravity-init: ./gravity/ has the five templates; ./specs/TEMPLATE.md is the spec template."
+echo "Next: fill gravity/job.md first, then domain, invariants, boundaries, grammar — in that order."
